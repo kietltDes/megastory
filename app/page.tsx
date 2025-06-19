@@ -75,7 +75,7 @@ export default function Home() {
             />
 
             </div>
-            <section className="px-2 sm:px-4 md:px-24 py-8 md:py-16">
+            <section className="">
               <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 mb-4 md:mb-0">
@@ -123,6 +123,8 @@ export default function Home() {
             </section>
           </section>
 
+          {/* Chương 2 */}
+
           <section className="px-4 sm:px-6 md:px-10 lg:px-24 py-18">
             <div className="w-full max-w-7xl mx-auto">
               <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden">
@@ -134,6 +136,56 @@ export default function Home() {
                 />
               </div>
             </div>
+            
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight">
+                Tâm lý FOMO, áp lực bắt trend
+              </h2>
+
+              <p className="text-base md:text-lg text-gray-800 leading-relaxed font-serif">
+                Trong thời đại công nghệ phát triển không ngừng, mạng xã hội đã trở thành một phần không thể thiếu trong cuộc sống của người trẻ. Nhờ đó, việc tiếp cận thông tin trở nên dễ dàng hơn bao giờ hết. Thế nhưng, đi kèm với sự tiện lợi ấy là một trạng thái tâm lý ngày càng phổ biến: <strong className="text-red-600">FOMO – nỗi sợ bị bỏ lỡ.</strong>
+              </p>
+
+              <figure className="w-full">
+                <img
+                  src="/images/hoi-chung-so-bo-lo-trong-xa-hoi-hien-dai-1200x800-1.jpg"
+                  alt="FOMO len lỏi trong đời sống giới trẻ"
+                  className="w-full h-auto object-cover rounded-md shadow-sm"
+                />
+                <figcaption className="mt-2 text-sm text-gray-600 italic">
+                  FOMO – nỗi sợ bị bỏ lỡ đang len lỏi trong đời sống giới trẻ thời đại số. (Ảnh: Prudential)
+                </figcaption>
+              </figure>
+
+              <p className="text-base md:text-lg text-gray-800 leading-relaxed font-serif">
+                FOMO - viết tắt của cụm từ <em>Fear Of Missing Out</em>, chỉ cảm giác lo lắng hoặc bất an khi nghĩ rằng người khác đang có những trải nghiệm thú vị, thành công hơn hoặc đang tận hưởng những cơ hội mà bản thân không có được. 
+              </p>
+
+              <p className="text-base md:text-lg text-gray-800 leading-relaxed font-serif">
+                Chỉ cần mở điện thoại và truy cập vào những nền tảng phổ biến như Facebook, Instagram hay TikTok, người dùng có thể ngay lập tức nhìn thấy những khoảnh khắc lung linh của người khác: từ những chuyến du lịch trong mơ, các bữa tiệc xa hoa cho tới những cột mốc sự nghiệp đáng ngưỡng mộ...
+              </p>
+
+              <figure className="w-full">
+                <img
+                  src="/images/17450792402.png"
+                  alt="Gen Z chịu ảnh hưởng FOMO rõ rệt"
+                  className="w-full h-auto object-cover rounded-md shadow-sm"
+                />
+                <figcaption className="mt-2 text-sm text-gray-600 italic">
+                  Gen Z là thế hệ chịu ảnh hưởng FOMO rõ rệt hơn so với các thế hệ trước (Ảnh: VOV)
+                </figcaption>
+              </figure>
+
+              <p className="text-base md:text-lg text-gray-800 leading-relaxed font-serif">
+                Không chỉ khiến khả năng tập trung suy giảm, FOMO còn ảnh hưởng đến cách giới trẻ sử dụng tiền bạc. Một món đồ thời trang mới, một chiếc điện thoại đang “hot”, hay một suất ăn tại nhà hàng nổi tiếng trên Instagram – tất cả đều có thể trở thành mục tiêu mua sắm vì... sợ không theo kịp bạn bè.
+              </p>
+
+              <p className="text-base md:text-lg text-gray-800 leading-relaxed font-serif">
+                Việc chi tiêu dựa trên cảm giác thiếu sót, thay vì nhu cầu thực sự, khiến nhiều người trẻ rơi vào tình trạng <strong className="text-red-600">"cháy túi"</strong> hoặc sống trong áp lực tài chính dai dẳng. Thậm chí, theo một báo cáo từ ứng dụng quản lý chi tiêu <em>Money Lover</em>, hơn 60% người từ 18–25 tuổi từng mua sắm những món không cần thiết chỉ vì thấy người khác đang sở hữu chúng.
+              </p>
+            </div>
+
+
           </section>
 
         </>
@@ -174,8 +226,8 @@ export default function Home() {
             <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#333333] mb-8">
               <span className="block mb-4">KHI NIỀM TIN VỤN VỠ,</span>
-              <span className="block mb-4">TRÁCH NHIỆM</span>
-              <span className="block">THUỘC VỀ AI ?</span>
+              <span className="block mb-4">NGƯỜI TRẺ </span>
+              <span className="block">VÀ CƠN BÃO HÀNG GIẢ</span>
             </h1>
 
             </div>
@@ -186,12 +238,13 @@ export default function Home() {
       {/* Image Section */}
       <section className="py-8 px-4">
         <div className="container mx-auto">
-          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
+          <div className="relative w-full rounded-lg overflow-hidden">
             <Image
-              src="/images/duong-den-truong.png"
+              src="/images/poster.png"
               alt="Đường đến trường - Nơi tận cùng Mù Cang Chải"
-              fill
-              className="object-cover"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>
