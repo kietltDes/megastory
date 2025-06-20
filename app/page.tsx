@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
+import Script from "next/script"
 
 export default function Home() {
   // Section data
@@ -80,7 +81,7 @@ export default function Home() {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 mb-4 md:mb-0">
                   <img 
-                    src="/images/vuvantrung.png" 
+                    src="/images/nguyehathanh.png" 
                     alt="Vân Giang" 
                     width={220}
                     height={220}
@@ -219,6 +220,25 @@ export default function Home() {
                 Giới trẻ luôn chịu áp lực phải ăn mặc thời thượng, đặc biệt là trong bối cảnh các nền tảng trực tuyến ngày càng phát triển. Xu hướng "outfit of the day" trên Instagram hay những trào lưu biến đổi không ngừng trên TikTok khiến giới trẻ luôn phải chạy theo để bắt kịp.
                 Mặc dù nằm ở phân khúc giá tầm thấp, nhưng các sản phẩm thời trang thuộc dòng “thời trang nhanh” lại được đánh giá là dễ gây ra lãng phí. Lý do nằm ở mức giá thấp và sự thay đổi liên tục về mẫu mã khiến sản phẩm cũ mau trở nên lỗi thời, kích thích người dùng liên tục loại bỏ sản phẩm cũ, mua sắm sản phẩm mới. 
                 </p>
+                <div className="w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                <Script 
+        src="https://player.vimeo.com/api/player.js" 
+        strategy="lazyOnload"
+      />
+      
+      {/* Video Container */}
+      <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+        <iframe 
+          // URL với tất cả tùy chọn ẩn
+          src="https://player.vimeo.com/video/1095081418?h=5a9d8b919a&title=0&byline=0&portrait=0&badge=0&controls=0&background=0"
+          className="absolute top-0 left-0 w-full h-full"
+          frameBorder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          title="video_interview"
+        />
+      </div>
+                  
+                </div>
               </div>
             </div>
 
@@ -394,8 +414,18 @@ export default function Home() {
               </p>
 
               {/* Placeholder cho video nếu chưa có */}
-              <div className="w-full aspect-video bg-gray-100 rounded-lg flex items-center justify-center text-gray-500 italic">
-                <video src="/videos/video.mp4" className="w-full h-full object-cover" controls />
+              <div className="w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                <video 
+                  src="/images/video.mp4" 
+                  className="w-full h-full object-cover rounded-lg" 
+                  controls
+                  preload="metadata"
+                  poster="/images/video-thumbnail.jpg" // optional: thêm poster nếu có
+                >
+                  <p className="text-gray-500 italic p-4">
+                    Trình duyệt của bạn không hỗ trợ phát video.
+                  </p>
+                </video>
               </div>
 
               <p>
@@ -466,6 +496,13 @@ export default function Home() {
           <p>
             Chị Thanh Thủy – Trưởng phòng Marketing tại một agency truyền thông – chia sẻ góc nhìn thực tế từ người trong nghề:
           </p>
+          <figure className="w-full mt-4">
+              <img
+                src="/images/quotes_note01.png"
+                alt="Gen Z chịu ảnh hưởng FOMO rõ rệt"
+                className="w-full h-auto object-cover rounded-md "
+              />
+            </figure>
 
           <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700">
             “Làm truyền thông mà nhắm mắt chạy chiến dịch cho sản phẩm không rõ ràng thì không khác gì tiếp tay. Uy tín của agency không chỉ đến từ độ viral, mà còn từ sự minh bạch và trách nhiệm với người tiêu dùng.”
@@ -581,21 +618,23 @@ export default function Home() {
 
             <h4 className="text-xl font-semibold mt-4">Gen Z có thực sự tỉnh táo hơn?</h4>
             <p>
-              Gen Z tỉnh táo hơn ở mặt nhận thức, nhưng đồng thời cũng phải đối mặt với nhiều áp lực hơn. Ngay từ khi còn học trường Báo, tụi mình đã biết tới các khái niệm như truyền thông sạch, tính minh bạch dữ liệu... Nhiều bạn còn rất giỏi trong việc “đọc vị” các chiến dịch sai lệch.
+            Mình nghĩ là Gen Z tỉnh táo hơn ở mặt nhận thức, nhưng lại bị bao vây bởi nhiều áp lực hơn so với các thế hệ trước. Từ khi còn học ở trường Báo, tụi mình đã được tiếp xúc với các khái niệm như truyền thông sạch, truyền thông có trách nhiệm, tính minh bạch dữ liệu… Thậm chí nhiều bạn rất giỏi trong việc “đọc vị” chiến dịch truyền thông sai lệch từ thương hiệu.
+            Nhưng nói thật, khi bước chân vào công việc thực tế, mọi thứ không trắng đen rõ ràng như trong sách vở. Có những lúc mình thấy các bạn rất rõ ràng về lý tưởng, nhưng khi đứng trước KPI, deadline, áp lực làm đẹp portfolio hoặc “vừa ra trường đã có campaign xịn”, thì lại bắt đầu thoả hiệp. Nên tỉnh táo là có, nhưng giữ được nó lâu hay không – lại là chuyện khác.
+
             </p>
             <p>
               Tuy nhiên, thực tế không trắng đen rõ ràng như sách vở. Nhiều bạn có lý tưởng, nhưng khi đối mặt với KPI, deadline, hoặc mong muốn “có campaign xịn” để làm đẹp hồ sơ – thì bắt đầu thoả hiệp. Nên tỉnh táo là có, nhưng giữ được nó lâu hay không – lại là chuyện khác.
             </p>
 
-            <h4 className="text-xl font-semibold mt-4">Lần đầu “chạm trán” với sản phẩm mờ ám</h4>
+            <h4 className="text-xl font-semibold mt-4">Trải nghiệm lần đầu “phát hiện bất thường” khi đi làm</h4>
             <p>
-              Lần đầu mình phát hiện bất thường là khi làm cộng tác viên truyền thông cho một thương hiệu thực phẩm chức năng. Mình được giao viết nội dung và triển khai mini campaign. Mọi thứ đều ổn cho đến khi mình hỏi xin giấy phép quảng cáo và kiểm nghiệm thành phần – và bị “seen” toàn tập.
+            Lần đầu mình “chạm trán” với một sản phẩm mờ ám là khi làm cộng tác viên truyền thông cho một thương hiệu thực phẩm chức năng online. Lúc đó, công việc của mình là viết nội dung và triển khai mini campaign cho sản phẩm mới. Tất cả đều rất bài bản… cho tới khi mình hỏi xin giấy phép quảng cáo và kiểm nghiệm thành phần thì bị… “seen” toàn tập.
             </p>
             <p>
-              Mình tra thử trên hệ thống công bố của Bộ Y tế thì phát hiện: tên sản phẩm không tồn tại. Khi hỏi lại, quản lý chỉ nói: “Bên đó bảo cứ làm đi, họ đang làm giấy rồi.” Tối đó mình suy nghĩ rất nhiều. Mới đi làm, công việc này là bước đệm tốt. Nhưng cuối cùng mình chọn nghỉ và từ chối nhận thù lao cho phần đã làm.
+            Sau đó, khi mình tra cứu thử thông tin trên hệ thống công khai của Bộ Y tế thì tên sản phẩm không hề tồn tại trong danh sách công bố. Đến khi hỏi lại, quản lý chỉ nói: “Bên đó bảo em cứ làm đi, họ đang ‘làm giấy’ rồi.”
             </p>
             <p>
-              Vì mình tự hỏi: “Chuyện này mà bung ra, tên mình cũng có trong bài viết. Lúc đó, ai sẽ chịu trách nhiệm?”
+            Tối hôm đó mình suy nghĩ mãi. Mình mới đi làm, công việc này là bước đệm tốt, nếu bỏ thì sẽ mất hết mối quan hệ. Nhưng cuối cùng, mình chọn nghỉ và từ chối nhận thù lao cho phần đã làm. Vì mình tự nhủ: “Chuyện này mà bung ra, tên mình cũng có trên bài viết, lúc đó ai sẽ chịu trách nhiệm?”
             </p>
           </section>
 
@@ -611,20 +650,90 @@ export default function Home() {
               Nhưng mình nghĩ đơn giản thế này: nếu ngay từ đầu đã chọn cách làm không đúng, thì dù CV có đẹp đến đâu – mình cũng không thể tự tin nhìn thẳng vào người tuyển dụng.
             </p>
 
+          <div className="space-y-4 mt-4">            
             <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700">
               “Hồ sơ thì có thể làm lại, nhưng lòng tin và đạo đức nghề nghiệp – mất rồi là mất luôn.”
             </blockquote>
 
             <blockquote className="border-l-4 border-yellow-500 pl-4 italic text-gray-700 mt-2">
               “CV có thể đẹp, nhưng nếu bản thân không tự tin với cách mình đã làm, thì đẹp để làm gì?”
-            </blockquote>
+            </blockquote> </div>
           </section>
         </article>
 
 
 
         </section>
-        
+
+        {/* Chương 6 */}
+
+        <section className="px-4 sm:px-6 md:px-10 lg:px-24 py-18">
+          <div className="w-full max-w-7xl mx-auto">
+            <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden">
+              <Image
+                src="/images/Group6.png"
+                alt="Đường đến trường - Nơi tận cùng Mù Cang Chải"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-24 py-12 font-serif text-base md:text-lg leading-relaxed text-gray-800 font-serif">
+            <p>
+            Trong bối cảnh hàng giả ngày càng tinh vi, từ chợ truyền thống đến các sàn thương mại điện tử, pháp luật Việt Nam đã siết chặt để bảo vệ người tiêu dùng, đặc biệt là Gen Z – thế hệ dễ bị cuốn vào những lời quảng cáo hấp dẫn. Theo Nghị định 98/2020/NĐ-CP, cá nhân làm hàng giả có thể bị phạt đến 50 triệu đồng hoặc tù từ 1 đến 15 năm nếu gây hậu quả nghiêm trọng. Doanh nghiệp vi phạm có thể chịu phạt tới 18 tỷ đồng, thậm chí bị cấm kinh doanh vĩnh viễn. KOL và Influencer quảng bá sản phẩm giả cũng không thoát trách nhiệm: Nghị định 38/2021/NĐ-CP quy định phạt từ 60–80 triệu đồng, buộc gỡ nội dung và đính chính công khai, với trường hợp nghiêm trọng có thể bị cấm hành nghề 1–5 năm.
+            </p>
+            <figure className="w-full mt-4">
+              <img
+                src="/images/chuong61.png"
+                alt="Gen Z chịu ảnh hưởng FOMO rõ rệt"
+                className="w-full h-auto object-cover rounded-md shadow-sm"
+              />
+              <figcaption className="mt-2 text-base text-gray-600 italic">
+              Những quảng cáo thổi phồng công dụng gây bức xúc dư luận - Ảnh: Báo tuổi trẻ
+              </figcaption>
+            </figure>
+            <p>
+            Hàng giả tràn lan, từ chợ truyền thống đến các sàn thương mại điện tử, nhưng Gen Z không chỉ ngồi than thở. Họ đang dùng công nghệ và cộng đồng để xây lại niềm tin, biến mình từ nạn nhân thành người dẫn đầu cuộc chơi.
+            </p>
+            <article className="prose lg:prose-xl max-w-4xl mx-auto py-6">
+              <h1 className="text-3xl font-bold mb-4">Gen Z – “Lá chắn số” chống hàng giả và review dối trá</h1>
+              <p>
+                Công nghệ đang trở thành công cụ đắc lực trong cuộc chiến chống hàng giả và thông tin sai lệch. 
+                Theo Bộ Công Thương, các giải pháp như tem QR, blockchain truy xuất nguồn gốc và thuật toán phát hiện đánh giá giả 
+                đã góp phần đáng kể trong việc nâng cao độ tin cậy của thị trường.
+              </p>
+              <p>
+                Tuy nhiên, thế hệ Gen Z không chỉ chờ đợi các giải pháp từ cơ quan quản lý. Họ chủ động tạo ra các cộng đồng trực tuyến 
+                như “Review & Check - Cộng Đồng Phân Biệt Hàng Thật & Giả” trên Facebook. Tại đây, mọi sản phẩm đều được “soi” kỹ lưỡng: 
+                từ dấu hiệu bình luận lặp, hình ảnh đã qua chỉnh sửa đến các hành vi bất thường của người ảnh hưởng (KOL). 
+                Những cuộc "lật tẩy" review giả đã khiến không ít sản phẩm nhanh chóng đánh mất lòng tin người tiêu dùng.
+              </p>
+
+              <blockquote className="py-4 border-l-4 border-red-500 pl-4 text-gray-700 italic font-serif text-base md:text-lg">
+                    <em>“Gen Z không chỉ mua sắm. Họ là lực lượng giám sát thông tin – đôi khi còn hiệu quả hơn cả những chiến dịch quảng cáo hàng tỷ đồng.”</em>
+                    <br />
+                    <span className="block mt-2 text-sm text-gray-500">— Chuyên gia truyền thông Lê Thu Trang nhận định</span>
+              </blockquote>
+              <figure className="w-full mt-4">
+              <img
+                src="/images/chuong62.png"
+                alt="Gen Z chịu ảnh hưởng FOMO rõ rệt"
+                className="w-full h-auto object-cover rounded-md shadow-sm"
+              />
+              <figcaption className="mt-2 text-base text-gray-600 italic">
+              Các thành viên thảo luận, check chéo hàng thật giả trong group. Ảnh: Chụp màn hình
+              </figcaption>
+            </figure>
+
+            <p>
+            Gen Z cũng biến AI thành vũ khí cá nhân, từ phát hiện giọng KOL chỉnh sửa đến kiểm tra filter trong video quảng cáo. Blockchain và hệ thống đánh giá xác thực từ cộng đồng càng giúp họ mua sắm thông minh hơn. Áp lực từ Gen Z buộc thương hiệu phải minh bạch: livestream sản xuất, công khai giá gốc, hay cam kết lợi nhuận hợp lý. Chuyên gia Trần Minh Đức nói: “Gen Z không chỉ mua sản phẩm, mà mua cả niềm tin đằng sau.” Theo YouGov 2025, 63% Gen Z sẵn sàng chi thêm cho thương hiệu minh bạch, và 74% ưu tiên sản phẩm có đạo đức.
+            </p>
+            <p>Tương lai, “de-influencer” – người đánh giá chân thật – sẽ thay thế KOL truyền thống, thuật toán Trust Score sẽ chấm điểm shop, và môn “Tư duy phản biện số” sẽ xuất hiện ở đại học, theo DataReportal và Nielsen 2026. Gen Z không chỉ tiêu dùng – họ đang viết lại luật chơi, biến niềm tin thành thứ phải được chứng minh.
+            </p>
+            </article>
+          </div>
+          
+        </section>
         </>
       ),
     },
@@ -709,54 +818,6 @@ export default function Home() {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-xl uppercase mb-12">Our Team</h2>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Team Member 1 */}
-            <div className="relative">
-              <div className="bg-[#333333] rounded-lg p-6 text-white transform rotate-3 mb-4">
-                <div className="relative h-48 mb-4">
-                  <Image
-                    src="/placeholder.svg?height=200&width=200"
-                    alt="Tomas Briks"
-                    fill
-                    className="object-cover rounded"
-                  />
-                </div>
-                <h3 className="text-xl font-medium mb-2">Tomas Briks</h3>
-                <p className="text-xs">
-                  A senior designer with 14 years experience. He leads our design team and has a passion for typography
-                  and creating visual details.
-                </p>
-              </div>
-              <p className="text-xs text-gray-500">
-                <span className="font-medium">Edgar Po</span>
-                <br />
-                Works worked as a designer for 14 years, primarily in identity design and brand strategy.
-              </p>
-            </div>
-
-            {/* Team Member 2 */}
-            <div className="bg-[#f0ebe5] rounded-lg p-6">
-              <h3 className="text-xl font-medium mb-2">Sandra Player</h3>
-              <p className="text-xs">
-                A diligent and experienced operator, she brings a fresh perspective to our creative process.
-              </p>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="bg-[#f0ebe5] rounded-lg p-6">
-              <h3 className="text-xl font-medium mb-2">Katie Hopwood</h3>
-              <p className="text-xs">
-                Katie is PR's Studio Assistant, making sure internal operations run smoothly and efficiently.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
     </div>
   )
