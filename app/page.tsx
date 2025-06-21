@@ -230,10 +230,10 @@ export default function Home() {
       <div className="relative w-full aspect-video rounded-lg overflow-hidden">
         <iframe 
           // URL với tất cả tùy chọn ẩn
-          src="https://player.vimeo.com/video/1095081418?h=5a9d8b919a&title=0&byline=0&portrait=0&badge=0&controls=0&background=0"
+          src="https://player.vimeo.com/video/1095081418?h=5a9d8b919a&title=0&byline=0&portrait=0&badge=0&controls=1&background=0"
           className="absolute top-0 left-0 w-full h-full"
           frameBorder="0" 
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          allow="fullscreen; picture-in-picture; encrypted-media; web-share"
           title="video_interview"
         />
       </div>
